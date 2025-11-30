@@ -1,0 +1,123 @@
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #6b7280;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Mobile menu animation */
+.mobile-menu-enter {
+    transform: translateX(-100%);
+}
+
+.mobile-menu-enter-active {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+
+/* Timeline styles */
+.timeline-item {
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #3498db;
+    transform: translateX(-50%);
+}
+
+.timeline-item:last-child::before {
+    height: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline-item::before {
+        left: 20px;
+    }
+
+    .timeline-content {
+        margin-left: 40px;
+    }
+}
+
+/* Form focus styles */
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Button hover effects */
+.btn-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Project card hover */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Skill badge hover */
+.skill-badge:hover {
+    transform: scale(1.05);
+}
+
+/* Loading animation for images */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img[alt] {
+    opacity: 0;
+}
+
+img[alt].loaded {
+    opacity: 1;
+}
