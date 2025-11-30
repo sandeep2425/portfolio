@@ -1,67 +1,275 @@
-// Dark mode toggle
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-const body = document.body;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Muddangula - Portfolio</title>
+    <meta name="description" content="Portfolio of Sandeep Muddangula, a Computer Science student specializing in full-stack development, AI, and backend engineering.">
+    <meta name="keywords" content="Sandeep Muddangula, Portfolio, Computer Science, Full-Stack Developer, AI, Backend Engineering">
+    <meta name="author" content="Sandeep Muddangula">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-xl font-bold text-blue-600 dark:text-blue-400">Sandeep Muddangula</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a>
+                    <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+                    <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Skills</a>
+                    <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
+                    <a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
+                    <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a>
+                    <button id="dark-mode-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-toggle" class="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-800">
+                <a href="#home" class="block px-3 py-2 text-base font-medium hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium hover:text-blue-600 dark:hover:text-blue-400">Experience</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    const isDark = body.classList.contains('dark');
-    localStorage.setItem('darkMode', isDark);
-});
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div class="text-center animate-fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Sandeep Muddangula</h1>
+            <p class="text-xl md:text-2xl mb-8">"Innovative CS Student Crafting Digital Solutions"</p>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Motivated and fast-learning Computer Science student with strong problem-solving skills and hands-on experience in full-stack development, artificial intelligence, and backend engineering.</p>
+            <a href="#projects" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">View My Work</a>
+        </div>
+    </section>
 
-// Load dark mode preference
-const savedDarkMode = localStorage.getItem('darkMode');
-if (savedDarkMode === 'true') {
-    body.classList.add('dark');
-}
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg mb-6">I'm Sandeep Muddangula, a passionate Computer Science student at Vasavi College of Engineering in Hyderabad, India. With a keen interest in technology and innovation, I'm dedicated to creating impactful solutions through code.</p>
+                    <p class="text-lg mb-6">My journey in tech has equipped me with skills in full-stack development, AI, and backend engineering. I'm always eager to learn new technologies and tackle challenging problems. Currently seeking internship opportunities to apply my skills and contribute to meaningful projects.</p>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-semibold mb-4">Education</h3>
+                        <p><strong>Bachelor of Science (B.Sc), Computer Science</strong></p>
+                        <p>Vasavi College of Engineering, Hyderabad</p>
+                        <p>Expected Graduation: June 2027</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4">Languages</h3>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="text-center">
+                                <h4 class="font-semibold">Telugu</h4>
+                                <p>Native</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="font-semibold">English</h4>
+                                <p>Upper Intermediate (B2)</p>
+                            </div>
+                            <div class="text-center">
+                                <h4 class="font-semibold">Hindi</h4>
+                                <p>Proficient</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img src="assets/profile.jpg" alt="Sandeep Muddangula" class="w-64 h-64 rounded-full mx-auto mb-6 object-cover" onerror="this.src='https://via.placeholder.com/256x256?text=Profile+Photo'">
+                </div>
+            </div>
+        </div>
+    </section>
 
-// Mobile menu toggle
-const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">Skills</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Java</span>
+                        <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">C</span>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-green-600 dark:text-green-400">Backend</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">Spring Boot</span>
+                        <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">Node.js</span>
+                        <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">Express.js</span>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-600 dark:text-purple-400">Web Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">HTML</span>
+                        <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">CSS</span>
+                        <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">React</span>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-red-600 dark:text-red-400">Databases</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full">SQL</span>
+                        <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-3 py-1 rounded-full">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Tools & Certifications</h3>
+                <p class="text-lg mb-4">Docker, Git, REST APIs, JWT Authentication, WebSockets</p>
+                <p class="text-lg">NPTEL (Python, DBMS) • OCI 2025 – Certified Generative AI Professional • Infosys Springboard – AI Foundation</p>
+            </div>
+        </div>
+    </section>
 
-mobileMenuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Real-Time Event Management Platform</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">React, Spring Boot, MongoDB, JWT, WebSocket, Tailwind CSS</p>
+                    <p class="mb-4">Developed a comprehensive event management system that streamlined event creation and ticket booking processes, resulting in a 30% increase in user engagement through real-time features. Implemented secure JWT authentication with role-based access, reducing unauthorized access incidents by 95%. Integrated WebSocket technology for instant updates and live chat, improving user experience and response times by 40%.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">View Project</a>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-4 text-green-600 dark:text-green-400">AI-Powered RAG Search Engine with Web Crawling</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Python, Scrapy, FAISS, Inverted Index, Ranking Algorithms, Flask/FastAPI</p>
+                    <p class="mb-4">Built an intelligent search engine that processes over 10,000 web pages daily, achieving 85% accuracy in relevant result retrieval. Utilized Scrapy for efficient data collection and FAISS for vector indexing, reducing search query response time by 60%. Implemented hybrid scoring techniques that improved search result relevance by 25%, enhancing user satisfaction and information discovery.</p>
+                    <a href="#" class="text-green-600 dark:text-green-400 hover:underline">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-        // Close mobile menu after clicking
-        mobileMenu.classList.add('hidden');
-    });
-});
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">Experience Timeline</h2>
+            <div class="relative">
+                <div class="border-l-4 border-blue-600 dark:border-blue-400 absolute h-full left-1/2 transform -translate-x-1/2"></div>
+                <div class="space-y-12">
+                    <div class="flex items-center w-full">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                                <h3 class="text-xl font-semibold mb-2">AI-Powered RAG Search Engine</h3>
+                                <p class="text-gray-600 dark:text-gray-400">2024</p>
+                                <p>Developed advanced search capabilities with AI-driven ranking algorithms.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 bg-blue-600 dark:bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                    <div class="flex items-center w-full">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="w-8 h-8 bg-blue-600 dark:bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                                <h3 class="text-xl font-semibold mb-2">Real-Time Event Management Platform</h3>
+                                <p class="text-gray-600 dark:text-gray-400">2024</p>
+                                <p>Created a full-stack application with real-time features and secure authentication.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center w-full">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                                <h3 class="text-xl font-semibold mb-2">Bachelor of Science, Computer Science</h3>
+                                <p class="text-gray-600 dark:text-gray-400">2023 - Present</p>
+                                <p>Pursuing degree at Vasavi College of Engineering, focusing on advanced computing concepts.</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 bg-blue-600 dark:bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2"></div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-// Contact form submission (basic handling)
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // In a real application, you would send this data to a server
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-});
+    <!-- Resume Download Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-8">Download My Resume</h2>
+            <p class="text-xl mb-8">Get a detailed overview of my skills and experience.</p>
+            <a href="assets/resume.pdf" download class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Download Resume</a>
+        </div>
+    </section>
 
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">Contact Me</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                    <p class="mb-4">I'm always open to discussing new opportunities and interesting projects. Feel free to reach out!</p>
+                    <div class="space-y-4">
+                        <p><strong>Email:</strong> sai.sandeep2425@gmail.com</p>
+                        <p><strong>Phone:</strong> +91 8688298209</p>
+                        <p><strong>Location:</strong> Hyderabad, India</p>
+                        <p><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/muddangula-sandeep-1b4616333" class="text-blue-600 dark:text-blue-400 hover:underline">linkedin.com/in/muddangula-sandeep-1b4616333</a></p>
+                    </div>
+                </div>
+                <div>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-        }
-    });
-}, observerOptions);
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2024 Sandeep Muddangula. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="http://www.linkedin.com/in/muddangula-sandeep-1b4616333" class="text-blue-400 hover:text-blue-300 mx-2">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
 
-// Observe sections for animation
-document.querySelectorAll('section').forEach(section => {
-    observer.observe(section);
-});
+    <script src="js/script.js"></script>
+</body>
+</html>
+
